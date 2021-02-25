@@ -29,10 +29,6 @@ const sendGoodByeEmail = (email, name) => {
     })
 }
 
-
-
-
-
 module.exports = {
     sendWelcomeEmail,
     sendGoodByeEmail

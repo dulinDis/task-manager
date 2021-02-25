@@ -59,7 +59,7 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-//virtual property setup- first paramtere sis whatever we want, then second is object with individla fuelds, this property is virual nd is not sotred inthe databaas,e its just for mongoose to know the relation
+//virtual property setup - first parameter is whatever we want, then second is object with individual fields, this property is virual and is not sotred inthe databaas,e its just for mongoose to know the relation
 userSchema.virtual('tasks', {
     ref: 'Task',
     localField: '_id',
@@ -69,7 +69,6 @@ userSchema.virtual('tasks', {
 //for an individual instance of a user 
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
-
     const token = jwt.sign({
         //this is an object id so we use tostring to convert to normal string
         _id: user._id.toString()
